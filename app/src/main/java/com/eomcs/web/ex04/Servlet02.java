@@ -68,7 +68,7 @@ public class Servlet02 extends GenericServlet {
 
     char[] chars = name.toCharArray();
     for (char c : chars) {
-      out.printf("%x\n", (int) c);
+      out.printf("%04x\n", (int) c);
     }
   }
 }
