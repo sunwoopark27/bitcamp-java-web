@@ -72,7 +72,6 @@ public class Servlet08 extends GenericServlet {
     // 2) 썸네일 이미지 만들기
     // => 원본 이미지 파일이 저장된 경로를 알려주고
     // 어떤 썸네일 이미지를 만들어야 하는지 설정한다.
-
     Builder<File> thumbnailBuilder = Thumbnails.of(this.uploadDir + "/" + filename);
     thumbnailBuilder.size(20, 20);
     thumbnailBuilder.outputFormat("jpg");

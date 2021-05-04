@@ -58,16 +58,15 @@ public class Servlet05 extends GenericServlet {
     out.println("<head><title>servlet04</title></head>");
     out.println("<body><h1>파일 업로드 결과</h1>");
 
-    // 일반 폼 데이터를 원래 하던 방식대로 값을 꺼낸다.
+    // 일반 폼 데이터를 꺼낼 때는 원래 하던 방식대로 값을 꺼낸다.
     out.printf("이름=%s<br>\n", httpReq.getParameter("name"));
     out.printf("나이=%s<br>\n", httpReq.getParameter("age"));
 
     // 파일 데이터는 getPart()를 이용한다.
     Part photoPart = httpReq.getPart("photo");
-    String filename = "";
     if (photoPart.getSize() > 0) {
       // 파일을 선택해서 업로드 했다면,
-      filename = UUID.randomUUID().toString();
+      String filename = UUID.randomUUID().toString();
       photoPart.write(this.uploadDir + "/" + filename);
       out.printf("사진=%s<br>\n", filename);
       out.printf("<img src='../upload/%s' height='50'><br>\n", filename);
@@ -75,5 +74,5 @@ public class Servlet05 extends GenericServlet {
     }
     out.println("</body></html>");
   }
-}
+} 
 
