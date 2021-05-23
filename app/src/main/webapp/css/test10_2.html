@@ -26,8 +26,8 @@
   }
 
   .c1 {
-    width: 100px;
-    height: 100px;
+    xwidth: 100px;
+    xheight: 100px;
     background-color: gray;
   }
 
@@ -35,7 +35,9 @@
   #d11 {background-color: orange;}
   #d2 {
     background-color: green;
-    float: right;
+    float: left; /* float 은 서로 겹치지 않는다! (위의 주석) */
+    width: 200px;
+    height: 100px;
   }
   #d3 {background-color: blue;}
   </style>
