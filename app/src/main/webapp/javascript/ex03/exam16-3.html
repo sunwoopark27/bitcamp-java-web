@@ -5,7 +5,7 @@
 <title>ex03</title>
 </head>
 <body>
-<h1>자바스크립트 글로벌 함수 - eval()</h1>
+<h1 id="header1">자바스크립트 글로벌 함수 - eval()</h1>
 <textarea id="ta" cols="80" rows="10"></textarea>
 <button id="btn1">실행</button>
 <script>
@@ -15,6 +15,7 @@
 // => "실행" 버튼을 누르면 textarea 상자에 입력한 자바스트립트를 실행시키기
 //  
 var ta = document.getElementById("ta");
+var header1 = document.getElementById("header1");
 
 document.getElementById("btn1").onclick = () => {
 	// input, textarea, select 등 입력폼 항목의 값을 꺼낼 때는 

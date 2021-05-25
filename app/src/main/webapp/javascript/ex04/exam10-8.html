@@ -25,7 +25,9 @@ function createScore(name, kor, eng, math) {
 }
 
 var scores = []; //new Array();
-scores[0] = new createScore("홍길동", 100, 100, 100);
+// 생성자 역할을 하는 함수는 반드시 처음이 반드시 대문자여야한다!! 클래스 아님! 생성자 역할을 하는 함수! 오해하지 말기
+// 최근에 자바스크립트에 클래스 문법이 추가되었지만 지금은 신경쓰지말라구!
+scores[0] = new createScore("홍길동", 100, 100, 100); // new 안하면 객체 못가져옴 this 에 없어!
 scores[1] = new createScore("임꺽정", 90, 90, 90);
 scores[2] = new createScore("유관순", 80, 80, 80);
 

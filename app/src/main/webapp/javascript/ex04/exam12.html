@@ -19,7 +19,8 @@ function Score(name, kor, eng, math) {
     this.math = math;
 }
 
-// 자바로 표현하면 "인스턴스 함수"
+// 자바로 표현하면 "인스턴스 함수" // 인스턴스가 있어야지 호출할 수 있음!
+// 특정 객체를 다루는 함수는 이렇게!
 Score.prototype.sum = function() { 
     return this.kor + this.eng + this.math
 }
@@ -28,6 +29,7 @@ Score.prototype.aver = function() {
 }
 
 // 자바로 표현하면 "스태틱 함수" 
+// 특정 객체를 다루지 않으면 이렇게!
 Score.count = 0;
 Score.f = function() {
 	console.log("Hello!");
@@ -49,6 +51,8 @@ Score.count = 100;
 console.log(Score.count);
 Score.f();
 
+console.log(Score);
+console.log(s);
 // 자바의 경우를 생각하면 어떤 함수를 prototype에 넣고 
 // 어떤 함수를 생성자에 넣는지 알 수 있다.
 // 인스턴스 메서드 => prototype 에 저장하라!

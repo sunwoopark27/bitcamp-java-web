@@ -40,8 +40,10 @@ tag1.onclick = function() {
               "<td>" + item.createdDate + "</td></tr>\n";
   }
   
+  console.log(trList); //HTML 태그를 표현하는 문자열
+  
   var tag2 = document.querySelector("#ta1 > tbody");
-  tag2.innerHTML = trList;
+  tag2.innerHTML = trList;// HTML 태그를 표현하는 문자열을 기존 태그에 삽입하면 그대로 UI 화면으로 출력된다.
   
 };
 

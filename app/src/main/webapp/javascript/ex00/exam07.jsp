@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" 
+    contentType="application/json; charset=UTF-8"
     pageEncoding="UTF-8"%>
 [
   {"no":1, "title":"제목입니다1", "viewCount": 100, "createdDate": "2019-4-26"},

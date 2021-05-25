@@ -13,7 +13,7 @@
 function closureMaker(fnType, count) { 
 	switch (fnType) {
 	case "sum":
-	    return () => { 
+	    return () => {  // 함수를 정의하고 함수 주소를 리턴함.
 	        var sum = 0;     
 	        for (var i = 1; i <= count; i++) {
 	            sum += i;
