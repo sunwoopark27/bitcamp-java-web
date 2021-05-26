@@ -28,8 +28,12 @@ var section = document.querySelector("section");
 var originContent = section.innerHTML;
 console.log(originContent);
 
-section.innerHTML = originContent + 
-    "<article><h1>제목이래요!</h1><p>내용이지요!</p></article>";
+window.setTimeout(function() {
+	section.innerHTML = originContent + 
+	    "<article><h1>제목이래요!</h1><p>내용이지요!</p></article>";
+	
+},10000);
+
 
 </script>
 </body>

@@ -11,6 +11,10 @@
 <button id="btn2">버튼2</button><br>
 <button id="btn3">버튼3</button><br>
 
+<!-- btn1-1 는 onclick 안에 자바스크립트 코드 들어있는것!
+     이 태그를 클릭하면 자바스크립트 실행하라는  -->
+<!-- 자바스크립트 코드가 길어지면 
+     btn1-2 처럼 별도의 메소드를 정의하고 그 함수를 호출하는 자바 코드를 넣는다!-->
 <script>
 "use strict"
 
@@ -53,7 +57,7 @@ function btn1Click() {
 
 // 방법2:
 var btn2 = document.getElementById("btn2");
-//var btn2 = document.querySelector("#btn2"); // 둘 중 아무거나 사용하면 된다.
+//var btn2 = document.querySelector("#btn2"); // 둘 중 아무거나 사용하면 된다. 밑에 꺼를 더 추천!
 
 function f1() {
     var str = "Hello2a!";
@@ -62,21 +66,21 @@ function f1() {
 }
 btn2.onclick = f1; // 함수의 주소를 객체 프로퍼티로 저장하는 순간 그 객체에 소속된다.
 
-/*
-btn2.onclick = function() {
+
+btn2.onclick = function() { // 따로 정의할 필요없이 만든다! 
     var str = "Hello2b!";
     window.alert(str);
     console.log(this); // 일반 함수에서 this는 그 함수가 소속된 객체이다.
 };
-*/
 
-/*
-btn2.onclick = () => {
+
+
+btn2.onclick = () => { // 익명함수 씀!!
   var str = "Hello2c!";
   window.alert(str);
   console.log(this); // arrow function에서 this는 window 객체이다.
 };
-*/
+
 
 // 방법3:
 // => addEventListener(이벤트명, 리스너);
@@ -94,7 +98,7 @@ btn3.addEventListener("click", () => {
   window.alert(str);
   console.log(this); // this는 window 객체이다.
 });
-btn3.addEventListener("click", btn3Click);
+btn3.addEventListener("click", btn3Click); // 함수 굳이 정의해서 쓰는것 비추!
 function btn3Click() {
   var str = "Hi3!!";
   window.alert(str);

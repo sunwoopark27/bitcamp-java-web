@@ -11,6 +11,14 @@
 <script>
 "use strict"
 
+// 내부적으로 위의 onclick="btn1Click(event)" 코드가 이렇게 바뀐다!
+/* 
+var btn1 = document.getElementById("btn1");
+btn1.onclick = function(event) {
+	btn1Click(event);
+} 
+*/
+
 // HTML 태그의 onclick 속성에 많은 자바스크립트 코드를 넣을 수 없을 때,
 // 함수를 만들고 호출하라!
 // => 물론 event 객체를 함수를 호출할 때 넘겨줘야 한다.

@@ -24,6 +24,8 @@
 // 
 var e = document.querySelector("article:nth-child(2) a");
 
+// !!!!!!!!개발자 도구의 Elements 안에서 태그를 보며 확인해라!!!!!!!!!!!!
+
 // 1) 방법1
 // => 사용자(개발자)가 태그 객체에 없던 임의의 속성을 추가할 때는 
 //    기존 태그의 속성을 덮어쓰지 않도록 하기 위해 
@@ -41,7 +43,6 @@ console.log(e["data-no"]);
 // 2) 방법2
 e.setAttribute("data-no2", 300);
 console.log(e.getAttribute("data-no2"));
-
 
 </script>
 </body>
