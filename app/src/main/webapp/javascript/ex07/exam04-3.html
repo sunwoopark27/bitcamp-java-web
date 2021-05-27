@@ -31,7 +31,7 @@ document.querySelector("#btn1").onclick = () => {
                 // 서버에서 받은 JSON 문자열을 자바스크립트 객체로 변환한다.
                 var arr = JSON.parse(xhr.responseText);
                 console.log(arr);
-                
+
                 // 배열을 반복하여 값을 꺼낸다.
                 for (var b of arr) {
                 	// tr 태그를 만든다.
@@ -45,6 +45,7 @@ document.querySelector("#btn1").onclick = () => {
                 	
                 	// tr 태그를 tbody의 자식 태그로 붙인다.
                 	tbody.appendChild(tr);
+
                 }
             }
         }

@@ -33,7 +33,7 @@ function prepareHeader() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
+            if (xhr.status == 200) { // 
                 header.innerHTML = xhr.responseText;
             }
         }
