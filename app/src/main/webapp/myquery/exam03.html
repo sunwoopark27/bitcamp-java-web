@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myQuery</title>
+</head>
+<body>
+<h1>myquery 만들기 3단계 - .html(str) 과 .appendTo(부모태그셀렉터)</h1>
+<table border="1">
+<thead>
+    <tr><th>번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<button id="btn1">데이터 가져오기!</button>
+
+<script>
+function jQuery(p) {
+	var el;
+	if (p.charAt(0) == '<') { // 예) <table>
+	  const template = document.createElement("p"); // p tag 만들기
+	  // const 라고 하면 완전한 로컬 변수! 바깥변수랑 충돌나지 않도록!! var 이라고 해도 되긴함
+	  template.innerHTML = p;
+	  el =  template.content.children; // 리턴되는건 태그 객테가 아니라 태그 객체가 담겨있는 컬랙션이라구
+	  console.log(el);
+	} else {
+  	el = document.querySelectorAll(p);
+	}
+	
+	el.html = function(htmlString){
+		for (var e of el) {
+			e.innerHTML = htmlString;
+		}
+	}; // 할당문이기 때문에; 붙임
+	
+	el.appendTo = function(selector) {
+		var parents = document.querySelectorAll(selector); // 부모태그를 리턴합니다
+		for (var parent of parents) {
+			for (var child of el) { // 부모를 찾았으면 el 에 들어있는 자식들을 다 준다.
+			parent.appendChild(el);
+			// 얘가 리턴하는건 오리지널 돔 객체?
+			}
+		}
+	}
+	return el; //element list
+}
+
+var $ = jQuery;
+</script>
+
+<script>
+"use strict"
+// var tbody = $("tbody")[0]; // list 이기 때문에 0번째 것만 꺼내자구
+// 한개만 거내면 태그 그 외에는 아니야 이제 더이사 ㅇ tbody ㅠㅣㄹ요없음 생성된 tr 태그 넣으려고 만든거 
+
+$("#btn1")[0].onclick = () => {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var arr = JSON.parse(xhr.responseText);
+                for (var b of arr) {
+                  var tr = $("<tr></tr>"); // tr 태그 만들어서 리턴 얘가 리턴한는걱ㄴ 컬렉션이니까 컬랙션에서 0번째 꺼내
+                  tr.html ("<td>" + b.no + "</td>" + 
+                     "<td>" + b.title + "</td>" + 
+                     "<td>" + b.writer + "</td>" +
+                     "<td>" + b.viewCnt + "</td>");
+                  tr.appendTo('tbody');
+                }
+            }
+        }
+    };
+    xhr.open("GET", "test.jsp", true);
+    xhr.send();
+};
+
+// 기존의 도큐먼트(html 문서)에서 특정 태그를 찾는 용도로 쓸 수 있고
+// 특정 태그르 만드는 용도로도 쓸 수 있다.
+</script>
+</body>
+</html>
+
+
+
+
+

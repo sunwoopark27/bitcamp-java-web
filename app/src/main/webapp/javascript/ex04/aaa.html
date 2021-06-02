@@ -5,33 +5,31 @@
 <title>ex04</title>
 </head>
 <body>
-<h1>광역시도/시군구</h1>
-<form >
+<h1>객체 - 정의</h1>
+<form>
 <select id="sido" name="sido">
-  <option value="101"> 서울 </option>
-  <option value="102"> 부산  </option>
-  <option value="103"> 대구 </option>
-  <option value="104"> 광주 </option>
-  
+  <option value="101">서울</option>
+  <option value="102">부산</option>
+  <option value="103">대구</option>
+  <option value="104">광주</option>
 </select>
 <select id="sigungu" name="sigungu">
-  <option value="101"> 서울 </option>
-  <option value="102"> 부산  </option>
-  <option value="103"> 대구 </option>
-  <option value="104"> 광주 </option>
-  
+  <option value="101">서울</option>
+  <option value="102">부산</option>
+  <option value="103">대구</option>
+  <option value="104">광주</option>
 </select>
-<button> 전송 </button>
+<button>전송</button>
 </form>
 <script>
 var t1 = document.querySelector("#sido");
 var t2 = document.querySelector("#sigungu");
 t1.onchange = function() {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "aaa.jsp?sido=" + t1.value, false); // 비동기하지 말아라 //원래 jsp 아니라 서블릿주소 줘야지
+  xhr.open("GET", "aaa.jsp?sido=" + t1.value, false);
   xhr.send();
   
-  t2.innerHTML = xhr.responseText; // 이 자리에 서버에서 받아온거 집어넣음
+  t2.innerHTML = xhr.responseText;  
 }
 </script>
 </body>

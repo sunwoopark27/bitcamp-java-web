@@ -26,6 +26,7 @@ war {
 
 dependencies {
 
+    implementation 'org.springframework:spring-webmvc:5.3.7'
 
     implementation 'javax.servlet:jstl:1.2'
 

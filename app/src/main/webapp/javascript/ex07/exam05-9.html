@@ -15,7 +15,7 @@
 </table>
 <button id="btn1">데이터 가져오기!</button>
 
-<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
 <script>
 "use strict"
 
@@ -24,6 +24,7 @@ var tbody = $("tbody");
 $("#btn1").click(() => {
 	
   $.getJSON('test6.jsp', function(result) {
+	  console.log("test")
     for (var b of result) {
         $("<tr>")
           .html("<td>" + b.no + "</td>" + 
