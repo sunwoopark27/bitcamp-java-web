@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry output="bin/main" kind="src" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
@@ -26,9 +27,14 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.7/8812519c55cc63314cd6002e14daacc90ef26252/spring-webmvc-5.3.7-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.7/8437c7a572177a34607abdaef2f6b8088488f5c0/spring-webmvc-5.3.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/2f5877ef15adb721421e80f5aa2b6fe069eec8ed/jstl-1.2-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -57,6 +63,42 @@
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.7/bd68b5fc60a67640d24af227e7fe694da6da9733/spring-context-5.3.7-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.7/330b3957efdcdebe3550b8e2c5d45a4c25496626/spring-context-5.3.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.7/d7feddb1357d5dd8dd5108ade3a8430a978efa84/spring-aop-5.3.7-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.7/b86edd2455f8c4399068c999beb9ea2a9e7f2047/spring-aop-5.3.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.7/85b25dc4addfd9b2a39471e0bade79b997df81c0/spring-web-5.3.7-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.7/49e6a8f45e77f14ef16f82c0413254ef493b785f/spring-web-5.3.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.7/57928ea0756f9f7affd383dcd8b015a85ba5ac2d/spring-beans-5.3.7-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.7/8b1eacd7aaa12f7d173a2f0836d28bd0c1b098fe/spring-beans-5.3.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.3.7/d1a77107bf7a22cf659b149c0c32ac77ac992d40/spring-expression-5.3.7-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.3.7/13351fce0a604957cd6a41478ebb54a953a0245e/spring-expression-5.3.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.7/847b9fc65843b41039a89b236f2d97c8dd0dbc7e/spring-core-5.3.7-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.7/4aad1b62bd347a806fe693c9d67b376a3ad8151c/spring-core-5.3.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.2/8d6b98f21262995489a8418fff8da992d7e25c1e/commons-io-2.2-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.2/83b5b8a7ba1c08f9e8c8ff2373724e33d3c1e22a/commons-io-2.2.jar">
@@ -96,6 +138,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/d26c56180205cbb50447c3eca98ecb617cf9f58b/j2objc-annotations-1.3-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.7/613e98f7e12f3c3bcabfca94cf534777f22f0f0/spring-jcl-5.3.7-sources.jar" kind="lib" path="/Users/sunwoo/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.7/ccd8bde38bad689737295fa220e1c70680676d72/spring-jcl-5.3.7.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
