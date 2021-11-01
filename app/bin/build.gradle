@@ -1,0 +1,45 @@
+plugins {
+    id 'eclipse-wtp'
+    id 'java'
+    id 'war'
+}
+
+repositories {
+    jcenter()
+}
+
+// 자바 소스를 컴파일 할 때 적용할 옵션
+tasks.withType(JavaCompile) {
+    // $javac -encoding UTF-8 ...
+    options.encoding = 'UTF-8';
+}
+
+eclipse {
+    project {
+        name = "bitcamp-java-web"
+    }
+}
+
+war {
+  archiveBaseName = "web"
+}
+
+dependencies {
+
+    implementation 'org.springframework:spring-webmvc:5.3.7'
+
+    implementation 'javax.servlet:jstl:1.2'
+
+    // 썸네일 이미지 생성 라이브러리
+    implementation 'net.coobird:thumbnailator:0.4.14'
+
+    // multipart/formdata 형식으로 넘어온 데이터를 처리하는 라이브러리
+    implementation 'commons-fileupload:commons-fileupload:1.4'
+    
+    // 웹 애플리케이션을 제작할 때 사용하는 Servlet/JSP 라이브러리
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+
+    testImplementation 'junit:junit:4.13'
+    
+    implementation 'com.google.guava:guava:29.0-jre'
+}

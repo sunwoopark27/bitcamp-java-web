@@ -27,7 +27,7 @@ war {
 dependencies {
 
     implementation 'org.springframework:spring-webmvc:5.3.7'
-
+    
     implementation 'javax.servlet:jstl:1.2'
 
     // 썸네일 이미지 생성 라이브러리
@@ -41,7 +41,5 @@ dependencies {
 
     testImplementation 'junit:junit:4.13'
     
-    implementation 'javax.servlet:jstl:1.2'
-
     implementation 'com.google.guava:guava:29.0-jre'
 }

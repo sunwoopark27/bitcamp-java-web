@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myQuery</title>
+</head>
+<body>
+<h1>myquery 만들기 7단계 - jQuery.ajax(url, settings)</h1>
+<table border="1">
+<thead>
+    <tr><th>번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<button id="btn1">데이터 가져오기!</button>
+
+<script>
+function jQuery(p) {
+	var el;
+	if (p.charAt(0) == '<') { // 예) <table>
+	  const template = document.createElement("p"); // p tag 만들기
+	  // const 라고 하면 완전한 로컬 변수! 바깥변수랑 충돌나지 않도록!! var 이라고 해도 되긴함
+	  template.innerHTML = p;
+	  el =  template.content.children;
+	  // 리턴되는건 태그 객테가 아니라 태그 객체가 담겨있는 컬랙션이라구
+	} else {
+  	el = document.querySelectorAll(p);
+	}
+	
+	el.html = function(htmlString){
+		for (var e of el) {
+			e.innerHTML = htmlString;
+		}
+		return el; 
+	}; // 할당문이기 때문에; 붙임
+	
+	el.appendTo = function(selector) {
+		var parents = document.querySelectorAll(selector); // 부모태그를 리턴합니다
+		for (var parent of parents) {
+			console.log(parent);
+			for (var child of el) { // 부모를 찾았으면 el 에 들어있는 자식들을 다 준다.
+			parent.appendChild(el);
+			// 얘가 리턴하는건 오리지널 돔 객체?
+			}
+		}
+		return el;
+	};
+
+	el.on = function(eventName, handler) {
+		for (var e of el){
+			e.addEventListener(eventName, handler);
+		} 
+		return el;
+	};
+	
+	el.click = function(handler) {
+		return el.on('click', handler);
+	};
+	
+	el.change = function(handler) {
+		return el.on('change', handler);
+	};
+	
+	return el;
+}
+
+jQuery.ajax = function(url, settings) { // 서버가 응답을 완료했을 떄 호출할 메소드가 success 라고 들어있어야해
+  if(!settings) {
+	  settings = {};
+  }
+	if(!settings.dataType) {
+	  settings.dataType = "text";
+  }
+  
+  if (!settings.method) {
+	  settings.method = "GET";
+  }
+  
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = () => {
+	    if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+        	if (settings.success) {
+        		if(settings.dataType == "text") {
+        			settings.success(xhr.responseText);
+        		} else if (settings.datatype == "json") {
+        			settings.success(JSON.parse(xhr.responseText));
+        		}
+        	}
+        	settings.success(xhr.responseText);
+        	}
+        } else {
+        	if(settings.error) {
+        	settings.error();
+        }
+	    }
+	};
+	xhr.open(settings.method, url, true);
+	
+	if (settings.method == "POST") {
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	}
+	xhr.send();
+	
+};
+var $ = jQuery;
+</script>
+
+<script>
+"use strict"
+
+// 찾았으면 click 이벤트에대해서 이 함수 호출해
+$("#btn1").click(() => {
+	 $.ajax("test.jsp", {
+		 dataType: "json",
+		 success: function(arr) {
+        arr.forEach(function(){
+           $("<tr></tr>").html ("<td>" + b.no + "</td>" + 
+              "<td>" + b.title + "</td>" + 
+              "<td>" + b.writer + "</td>" +
+              "<td>" + b.viewCnt + "</td>").appendTo('tbody');
+        	
+        });  
+      }
+	});
+});
+	
+// 기존의 도큐먼트(html 문서)에서 특정 태그를 찾는 용도로 쓸 수 있고
+// 특정 태그르 만드는 용도로도 쓸 수 있다.
+</script>
+</body>
+</html>
+
+
+
+
+
